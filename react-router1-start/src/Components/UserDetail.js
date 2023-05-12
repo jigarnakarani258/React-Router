@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const usersData = [
     {
@@ -22,6 +22,9 @@ const usersData = [
 function UserDetail() {
 
     const { user_id } = useParams();
+    const [serchParams , setSearchParams] = useSearchParams();
+
+    const activeUsersFlag = serchParams.get('filter') === 'active'
     
     let result ;
     usersData.map((user) => {
@@ -29,7 +32,7 @@ function UserDetail() {
             result = user
         }
     })
-   
+
     return (
         <>
             <center>
@@ -40,6 +43,17 @@ function UserDetail() {
                         : `No Data Availabe of given user_id ${user_id}`
                 }
             </center>
+
+            <div>
+                Show user data status(active) wise
+                <button onClick={ () => { setSearchParams( {filter: 'active'} ) }}> Active Users </button>
+                <button onClick={ () => { setSearchParams() }}> Reset Filter </button>
+            </div>
+            <div>
+                { 
+                    activeUsersFlag ? 'Active Users' : 'All Users'
+                }
+            </div>
         </>
     )
 }
