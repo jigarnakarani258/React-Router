@@ -14,10 +14,12 @@ function NavigationBar() {
     }
 
     return (
-        <nav>
+        <nav className="primary-nav">
             <h3> Sample React App </h3>
             <NavLink to='/' style={NavActiveLinkStyle} > Home </NavLink>
             <NavLink to='/about' style={NavActiveLinkStyle} > About </NavLink>
+            <NavLink to='/products' style={NavActiveLinkStyle} > Products </NavLink>
+            <NavLink to='/users' style={NavActiveLinkStyle} > Users </NavLink>
         </nav>
     )
 }

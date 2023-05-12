@@ -12,12 +12,23 @@ code {
     monospace;
 }
 
-nav {
+.primary-nav {
   background-color: gray;
   padding : 16px 32px ;
 }
 
-nav a{
+.primary-nav a{
+  margin-right: 16px;
+}
+
+
+.product-link {
+    text-decoration-color: black;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.product-link a{
   margin-right: 16px;
 }
 
