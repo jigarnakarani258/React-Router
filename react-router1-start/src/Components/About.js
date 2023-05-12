@@ -2,9 +2,11 @@ import React from "react"
 
 function About() {
  return(
-    <h1>
-        About Page
-    </h1>
+    <>
+        <center> 
+            <h3> About Page </h3> 
+        </center>
+    </>
  )   
 }
 export default About;
