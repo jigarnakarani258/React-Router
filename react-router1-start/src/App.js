@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes , Route } from 'react-router-dom'
 import Home from './Components/Home';
 import NavigationBar from './Components/NavigationBar';
@@ -11,6 +12,7 @@ import Users from './Components/Users';
 import About from './Components/About';
 import UserDetail from './Components/UserDetail';
 import Admin from './Components/Admin';
+const lazyComponent = React.lazy( () => import('./Components/LazyLoadingDemo'))
 
 function App() {
   return (

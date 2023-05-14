@@ -6,6 +6,7 @@ function About() {
         <center> 
             <h3> About Page </h3> 
         </center>
+        
     </>
  )   
 }
