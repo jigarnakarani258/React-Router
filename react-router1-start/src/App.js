@@ -12,7 +12,7 @@ import Users from './Components/Users';
 import About from './Components/About';
 import UserDetail from './Components/UserDetail';
 import Admin from './Components/Admin';
-const lazyComponent = React.lazy( () => import('./Components/LazyLoadingDemo'))
+const LazyComponent = React.lazy( () => import('./Components/LazyLoadingDemo'))
 
 function App() {
   return (
@@ -35,6 +35,12 @@ function App() {
 
       
         <Route path='about' element={ <About/> } > </Route>
+        <Route path='lazy-loading' element={ 
+          <React.Suspense fallback=' Page Loading....'>
+            <LazyComponent/>
+          </React.Suspense> 
+        } > 
+        </Route>
         {/* When path is not matching with our website route then render this Handler component */}
         <Route path='*' element={ <NoMatchingRouteHandler/> } > </Route>
       </Routes>
